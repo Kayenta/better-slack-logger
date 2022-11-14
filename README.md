@@ -15,7 +15,8 @@ and the latest [Block Kit UI](https://api.slack.com/block-kit).
 
 ## Install
 
-Uninstall [`python-slack-logger`](https://github.com/chinnichaitanya/python-slack-logger) package by [Chaitanya Chinni](https://github.com/chinnichaitanya/) first: `pip uninstall python-slack-logger`
+Uninstall [`python-slack-logger`](https://github.com/chinnichaitanya/python-slack-logger) package by [Chaitanya Chinni](https://github.com/chinnichaitanya/) first: `pip uninstall python-slack-logger`  
+
 Install via pip: `pip install better-slack-logger`
 
 ## Basic Usage
