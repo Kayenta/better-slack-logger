@@ -5,7 +5,7 @@ with open("README.md", mode="r", encoding="utf8") as fd:
 
 setuptools.setup(
     name="better-slack-logger",
-    version="0.10.0",
+    version="0.11.0",
     author="Chaitanya Chinni & Jay Turner",
     description="Slack Logger is a custom message logger to Slack for Python 3",
     maintainer="Jay Turner",
