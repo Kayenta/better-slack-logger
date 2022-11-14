@@ -1,21 +1,22 @@
-# Python Slack Logger
+# Better Slack Logger
+
+This is a fork is [`python-slack-logger`](https://github.com/chinnichaitanya/python-slack-logger) package by [Chaitanya Chinni](https://github.com/chinnichaitanya/). If using this, please remove that from your environment.
 
 A custom message logger to Slack for Python 3.
 This project was built using [`slackclient`](https://github.com/slackapi/python-slackclient)
 and the latest [Block Kit UI](https://api.slack.com/block-kit).
 
-This is the Slack alternative to [`discord-logger`](https://github.com/chinnichaitanya/python-discord-logger) package for Discord.
-
-<a href="https://pypi.org/project/python-slack-logger/"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/python-slack-logger"></a>
-[![PyPI version](https://badge.fury.io/py/python-slack-logger.svg)](https://badge.fury.io/py/python-slack-logger)
-<a href="https://pepy.tech/project/python-slack-logger"><img alt="Downloads" src="https://static.pepy.tech/badge/python-slack-logger"></a>
-<a href="https://pypi.org/project/python-slack-logger/#files"><img alt="PyPI - Wheel" src="https://img.shields.io/pypi/wheel/python-slack-logger"></a>
-[![License: MIT](https://img.shields.io/pypi/l/python-slack-logger)](https://github.com/chinnichaitanya/python-slack-logger/blob/master/LICENSE)
+<a href="https://pypi.org/project/better-slack-logger/"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/better-slack-logger"></a>
+[![PyPI version](https://badge.fury.io/py/better-slack-logger.svg)](https://badge.fury.io/py/better-slack-logger)
+<a href="https://pepy.tech/project/better-slack-logger"><img alt="Downloads" src="https://static.pepy.tech/badge/better-slack-logger"></a>
+<a href="https://pypi.org/project/better-slack-logger/#files"><img alt="PyPI - Wheel" src="https://img.shields.io/pypi/wheel/better-slack-logger"></a>
+[![License: MIT](https://img.shields.io/pypi/l/better-slack-logger)](https://github.com/TurnrDev/better-slack-logger/blob/master/LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 
 ## Install
 
-Install via pip: `pip install python-slack-logger`
+Uninstall [`python-slack-logger`](https://github.com/chinnichaitanya/python-slack-logger) package by [Chaitanya Chinni](https://github.com/chinnichaitanya/) first: `pip uninstall python-slack-logger`
+Install via pip: `pip install better-slack-logger`
 
 ## Basic Usage
 
@@ -40,7 +41,7 @@ response = logger.send(
 )
 ```
 
-![Image](https://raw.githubusercontent.com/chinnichaitanya/python-slack-logger/master/images/basic_message.png "Basic Usage")
+![Image](https://raw.githubusercontent.com/TurnrDev/better-slack-logger/master/images/basic_message.png "Basic Usage")
 
 ## Configure various options
 
@@ -124,7 +125,7 @@ response = logger.send(
 )
 ```
 
-![Image](https://raw.githubusercontent.com/chinnichaitanya/python-slack-logger/master/images/error_message.png "Message with Service Name, Icon and Environment")
+![Image](https://raw.githubusercontent.com/TurnrDev/better-slack-logger/master/images/error_message.png "Message with Service Name, Icon and Environment")
 
 ### Send messages without Hostname
 
@@ -151,7 +152,7 @@ response = logger.send(
 )
 ```
 
-![Image](https://raw.githubusercontent.com/chinnichaitanya/python-slack-logger/master/images/basic_message_without_hostname.png "Basic message without Hostname")
+![Image](https://raw.githubusercontent.com/TurnrDev/better-slack-logger/master/images/basic_message_without_hostname.png "Basic message without Hostname")
 
 ### Send messages with different log-levels
 
@@ -202,7 +203,7 @@ response = logger.send(
 )
 ```
 
-![Image](https://raw.githubusercontent.com/chinnichaitanya/python-slack-logger/master/images/success_message.png "Message with success log-level")
+![Image](https://raw.githubusercontent.com/TurnrDev/better-slack-logger/master/images/success_message.png "Message with success log-level")
 
 ### Send complete error traceback
 
@@ -248,4 +249,4 @@ response = logger.send(
 )
 ```
 
-![Image](https://raw.githubusercontent.com/chinnichaitanya/python-slack-logger/master/images/complete_error_traceback.png "Message with complete error traceback")
+![Image](https://raw.githubusercontent.com/TurnrDev/better-slack-logger/master/images/complete_error_traceback.png "Message with complete error traceback")
