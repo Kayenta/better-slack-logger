@@ -14,7 +14,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/TurnrDev/better-slack-logger",
     packages=setuptools.find_packages(),
-    install_requires=["slackclient == 2.9.3", "pyyaml == 5.4.1"],
+    install_requires=["slackclient == 2.9.3", "pyyaml>=5.1"],
     classifiers=[
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
@@ -26,7 +26,7 @@ setuptools.setup(
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
-    python_requires=">=3.5",
+    python_requires=">=3.7",
     keywords=[
         "monitoring",
         "slack",
