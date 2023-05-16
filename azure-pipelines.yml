@@ -1,0 +1,81 @@
+trigger:
+  branches:
+    include:
+      - version/*
+    exclude:
+      - dependabot/*
+
+resources:
+  - repo: self
+
+pool:
+  vmImage: "ubuntu-latest"
+
+stages:
+  - stage: Lint
+    displayName: Lint code
+    condition: not(startsWith(variables['system.pullRequest.sourceBranch'], 'dependabot'))
+    jobs:
+      - job: Lint
+        displayName: Lint
+        steps:
+          - task: UsePythonVersion@0
+            displayName: Setup Python 3.11
+            inputs:
+              versionSpec: "3.11"
+              addToPath: true
+              architecture: "x64"
+          - task: Bash@3
+            displayName: Install requirements
+            inputs:
+              targetType: "inline"
+              script: |
+                curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+                export PATH=$PATH:$HOME/.poetry/bin
+                echo "##vso[task.prependpath]$HOME/.poetry/bin"
+                poetry install --no-root --only dev
+          - task: Bash@3
+            displayName: flake8
+            inputs:
+              targetType: "inline"
+              script: |
+                poetry run flake8 .
+          - task: Bash@3
+            displayName: isort
+            inputs:
+              targetType: "inline"
+              script: |
+                poetry run isort --profile black --check .
+          - task: Bash@3
+            displayName: black
+            inputs:
+              targetType: "inline"
+              script: |
+                poetry run black --check .
+  - stage: Build
+    displayName: Build and Push Packages
+    dependsOn: [Test]
+    jobs:
+      - job: Build
+        displayName: Build
+        steps:
+          - task: UsePythonVersion@0
+            displayName: Setup Python 3.11
+            inputs:
+              versionSpec: "3.11"
+              addToPath: true
+              architecture: "x64"
+          - task: Bash@3
+            displayName: Install requirements
+            inputs:
+              targetType: "inline"
+              script: |
+                curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+                export PATH=$PATH:$HOME/.poetry/bin
+                echo "##vso[task.prependpath]$HOME/.poetry/bin"
+          - task: Bash@3
+            displayName: Build & Publish package
+            inputs:
+              targetType: "inline"
+              script: |
+                poetry publish -u __token__ -p $(PYPI_TOKEN) --build --no-interaction
