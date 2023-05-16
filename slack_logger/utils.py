@@ -1,29 +1,30 @@
-def bold(text):
-    return "*" + str(text) + "*"
+from __future__ import annotations
+
+from typing import Dict, List, Optional, Union
 
 
-def code(text):
-    return "```" + str(text) + "```"
+def bold(text: str) -> str:
+    return f"*{text}*"
 
 
-def mrkdwn_block(markdown_text=None):
-    _markdown_text = ""
-    if markdown_text is not None:
-        _markdown_text = str(markdown_text)
-
-    return {"type": "section", "text": {"type": "mrkdwn", "text": _markdown_text}}
+def code(text: str) -> str:
+    return f"```{text}```"
 
 
-def fields_block(fields=None):
-    _fields = list()
+def markdown_block(markdown_text: str) -> Dict[str, Union[str, Dict[str, str]]]:
+    return {"type": "section", "text": {"type": "mrkdwn", "text": markdown_text}}
+
+
+def fields_block(fields: Optional[Dict[str, str]] = None) -> Dict[str, Union[str, List[Dict[str, str]]]]:
+    _fields = []
     if fields is not None:
         for key, value in fields.items():
-            _field_text = bold(key + ":") + " " + value
-            _field_item = {"type": "mrkdwn", "text": _field_text}
-            _fields.append(_field_item)
+            field_text = f'{bold(f"{key}:")} {value}'
+            field_item = {"type": "mrkdwn", "text": field_text}
+            _fields.append(field_item)
 
     return {"type": "section", "fields": _fields}
 
 
-def divider_block():
+def divider_block() -> Dict[str, str]:
     return {"type": "divider"}
