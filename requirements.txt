@@ -1,5 +1,0 @@
-slack-sdk>=3.0.0
-pyyaml>=5.1
-black
-isort
-flake8
