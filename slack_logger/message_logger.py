@@ -1,6 +1,6 @@
 from socket import gethostname
 
-import slack
+import slack_sdk
 from yaml import dump
 
 from .utils import bold, code, divider_block, fields_block, mrkdwn_block
@@ -51,7 +51,7 @@ class SlackLogger:
         if self.default_level not in self.COLORS.keys():
             self.default_level = "default"
 
-        self.slack = slack.WebClient(token=self.token)
+        self.slack = slack_sdk.WebClient(token=self.token)
 
     def _construct_heading_block(self):
         _heading = "<!channel>"
