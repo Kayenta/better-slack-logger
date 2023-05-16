@@ -92,13 +92,9 @@ class SlackLogger:
     def _construct_metadata_block(self, metadata=None):
         _metadata = ""
         if metadata is not None:
-            _metadata = dump(
-                metadata, indent=4, default_flow_style=False, sort_keys=False
-            )
+            _metadata = dump(metadata, indent=4, default_flow_style=False, sort_keys=False)
 
-        _block = mrkdwn_block(
-            ":house_buildings: " + bold("Metadata:") + "\n" + code(_metadata)
-        )
+        _block = mrkdwn_block(":house_buildings: " + bold("Metadata:") + "\n" + code(_metadata))
         return _block
 
     def _construct_environment_block(self):
