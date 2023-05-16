@@ -27,7 +27,7 @@ authors = [
 maintainers = ["Jay Turner <jaynicholasturner@gmail.com>"]
 license = "MIT License"
 readme = "README.md"
-packages = [{ include = "better_slack_logger" }]
+packages = [{ include = "slack_logger" }]
 repository = "https://github.com/TurnrDev/better-slack-logger"
 keywords = [
   "monitoring",
