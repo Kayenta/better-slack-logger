@@ -54,6 +54,7 @@ stages:
                 poetry run black --check .
   - stage: Build
     displayName: Build and Push Packages
+    condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
     jobs:
       - job: Build
         displayName: Build
