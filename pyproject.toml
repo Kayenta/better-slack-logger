@@ -10,17 +10,17 @@ combine_as_imports = true
 
 [tool.poetry]
 name = "better-slack-logger"
-version = "0.12.0.post1"
+version = "0.12.0.post2"
 description = "Slack Logger is a custom message logger to Slack for Python 3"
 authors = [
   "Chinni Chaitanya <chchaitanya95@gmail.com>",
-  "Jay Turner <jaynicholasturner@gmail.com>",
+  "Jay Turner <jay.turner@kayenta.io>",
 ]
-maintainers = ["Jay Turner <jaynicholasturner@gmail.com>"]
+maintainers = ["Jay Turner <jay.turner@kayenta.io>"]
 license = "MIT License"
 readme = "README.md"
 packages = [{ include = "slack_logger" }]
-repository = "https://github.com/TurnrDev/better-slack-logger"
+repository = "https://github.com/Kayenta/better-slack-logger"
 keywords = [
   "monitoring",
   "slack",
